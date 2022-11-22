@@ -1,4 +1,4 @@
-package az.ikt.java.lesson2.loop;
+package az.ikt.java.lesson1.lesson2.loop;
 
 public class forLoop1 {
     public static void main(String[] args) {
