@@ -19,12 +19,11 @@ public class Human extends Main {
         this.surname = surname;
     }
 
-    public Human(String name, String surname, int year, int iq, t) {
+    public Human(String name, String surname, int year, int iq) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         setIq();
-
     }
 
     public String getName() {
