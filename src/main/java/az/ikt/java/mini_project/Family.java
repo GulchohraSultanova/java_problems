@@ -1,11 +1,11 @@
-package az.ikt.java.lesson4;
+package az.ikt.java.mini_project;
 
 import java.util.Arrays;
 
 public class Family {
     private Human mother;
     private Human father;
-    private Human [] children;
+    private Human[] children;
     private Pet pet;
 
     @Override
@@ -18,15 +18,19 @@ public class Family {
         return super.equals(obj);
     }
 
-    public void deleteChild(Human child)
-    {
-        Human[] children1 =new Human[children.length-1];
-        for(int i=0;i< children.length;i++) {
-            if (child != children[i])
-                children1[i] = children[i];
+    public void deleteChild(Human child) {
+        if (children.length == 0)
+            System.out.println("Child is not exist!");
+        else {
+            Human[] children1 = new Human[children.length - 1];
+            for (int i = 0; i < children.length; i++) {
+                if (child != children[i])
+                    children1[i] = children[i];
+            }
+            children = children1;
         }
-             children=children1;
     }
+
     public void addChild(Human child) {
         if (children == null) {
             children = new Human[1];
@@ -40,6 +44,7 @@ public class Family {
             children = children2;
         }
     }
+
     public Family() {
     }
 
@@ -82,13 +87,23 @@ public class Family {
         this.pet = pet;
     }
 
+    public Family(Human mother, Human father) {
+        this.mother = mother;
+        this.father = father;
+    }
+
     @Override
     public String toString() {
         return "Family{" +
                 "mother=" + mother +
-                ", father=" + father +
+                ", \nfather=" + father +
                 ", children=" + Arrays.toString(children) +
                 ", pet=" + pet +
                 '}';
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Garbage collector is running...");
     }
 }

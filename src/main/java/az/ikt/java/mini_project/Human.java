@@ -1,4 +1,4 @@
-package az.ikt.java.lesson4;
+package az.ikt.java.mini_project;
 
 import java.util.Arrays;
 
@@ -24,6 +24,16 @@ public class Human extends Main {
         this.surname = surname;
         this.year = year;
         setIq();
+    }
+
+
+    public Human(String name, String surname, int year, int iq,String[][] schedule, Family family) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.schedule=schedule;
+        this.family = family;
     }
 
     public String getName() {
@@ -76,7 +86,10 @@ public class Human extends Main {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", schedule=" + Arrays.toString(schedule) +
+                ", schedule=" + Arrays.deepToString(schedule) +
                 '}';
+    }
+    protected void finalize() throws Throwable{
+        System.out.println("Garbage collector is running...");
     }
 }

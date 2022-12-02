@@ -1,4 +1,4 @@
-package az.ikt.java.lesson4;
+package az.ikt.java.lesson2;
 
 import java.util.Scanner;
 
