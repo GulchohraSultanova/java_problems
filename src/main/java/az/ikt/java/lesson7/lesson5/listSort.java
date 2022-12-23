@@ -1,4 +1,4 @@
-package az.ikt.java.lesson5;
+package az.ikt.java.lesson7.lesson5;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
